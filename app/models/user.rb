@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   before_save {self.email = email.downcase}
   validates :username , presence: true
   validates :email, presence: true, uniqueness: {case_sensitive: false}
-  validates :user_id, presence: true
+  #
   has_many :articles
 
   has_secure_password
